@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" href="{{ '/assets/icon.png' | relative_url }}">
+  <style>
+    :root { --accent: #00ad9e; --ink: #16201f; --muted: #5d6b69; --bg: #ffffff; --card: #f2f6f5; }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #eef3f2; --muted: #9fb0ad; --bg: #101615; --card: #1a2321; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+           color: var(--ink); background: var(--bg); }
+    header { padding: 20px; border-bottom: 1px solid var(--card); }
+    header a { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; }
+    header img { width: 36px; height: 36px; border-radius: 9px; }
+    nav { float: right; display: flex; gap: 18px; margin-top: 7px; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: 15px; }
+    main { max-width: 680px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { font: 800 34px/1.15 ui-rounded, -apple-system, system-ui, sans-serif; margin: 0 0 12px; }
+    h2 { font-size: 20px; margin: 32px 0 8px; }
+    a { color: var(--accent); }
+    .card { background: var(--card); border-radius: 16px; padding: 18px 20px; margin: 20px 0; }
+    .hero { text-align: center; padding: 24px 0 8px; }
+    .hero img { width: 120px; height: 120px; border-radius: 28px; box-shadow: 0 10px 30px rgba(0,0,0,.15); }
+    .muted { color: var(--muted); }
+    footer { text-align: center; color: var(--muted); font-size: 14px; padding: 24px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="{{ '/' | relative_url }}"><img src="{{ '/assets/icon.png' | relative_url }}" alt="">Slow Roll</a>
+    <nav>
+      <a href="{{ '/support/' | relative_url }}">Support</a>
+      <a href="{{ '/privacy/' | relative_url }}">Privacy</a>
+    </nav>
+  </header>
+  <main>
+{{ content }}
+  </main>
+  <footer>Slow Roll · Heads-up poker in iMessage</footer>
+</body>
+</html>
